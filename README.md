@@ -10,10 +10,8 @@ For example, the SAS based access to ADLS is possible in Amazon EMR version 6.9.
 
 In this project we provide a custom class that implements the "SASTokenProvider" interface that is required to enable the SAS token based access to ADLS using Hadoop and Spark. 
 ## Security
-
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
 ## License
-
 This library is licensed under the MIT-0 License. See the LICENSE file.
 
