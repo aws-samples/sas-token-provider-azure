@@ -9,6 +9,21 @@ AWS services like [Amazon EMR](https://aws.amazon.com/emr/) and [AWS Glue](https
 For example, the SAS based access to ADLS is possible in Amazon EMR version 6.9.0 and above which bundle hadoop-common 3.3.0 where support for [HADOOP-16730](https://issues.apache.org/jira/browse/HADOOP-16730) has been implemented. However, the hadoop-azure module provides only a "SASTokenProvider" interface that is not yet implemented as a class. For accessing ADLS using SAS tokens, this interface should be implemented as a custom class and presented as a configuration in AWS services that use open source Hadoop libraries like Amazon EMR and AWS Glue.
 
 In this project we provide a custom class that implements the "SASTokenProvider" interface that is required to enable the SAS token based access to ADLS using Hadoop and Spark. 
+## Compilation and Packaging Details
+The details of all the dependencies used for the first version developed can be found in the provided pom.xml file within the project. Some of the important details are listed below. 
+* Java version used to compile, package and test the first version - openjdk version "1.8.0_362"
+* Dependent open-source jars used to compile, package and test the first version:
+    * hadoop-azure-3.3.3.jar 
+    * hadoop-common-3.3.3.jar
+    * hadoop-core-1.2.1.jar
+## Usage Patterns and Testing Details
+The jar file created created from this custom class implementation can be used to access data in ADLS using SAS tokens from AWS services. 
+* AWS Services tested for ADLS data access using SAS tokens using the jar created from the first version:
+    * Amazon EMR 6.9.0
+    * AWS Glue 4.0 (See Note below)
+
+**Note-** *For AWS Glue, you have to include the dependencies (hadoop-azure-3.3.3.jar, hadoop-common-3.3.3.jar) while creating the jar file or provide those as additional jars in "Dependent JARs path" property.*
+
 ## Security
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
