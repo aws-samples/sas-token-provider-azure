@@ -23,7 +23,24 @@ The jar file created created from this custom class implementation can be used t
     * AWS Glue 4.0 (See Note below)
 
 **Note-** *For AWS Glue, you have to include the dependencies (hadoop-azure-3.3.3.jar, hadoop-common-3.3.3.jar) while creating the jar file or provide those as additional jars in "Dependent JARs path" property.*
+## How to Create Package
+1. Download and install [Maven](https://maven.apache.org/index.html)
+2. Clone this repo
+3. Execute the following steps from command line:
+    * Change working directory to the project's root directory
+        * `cd azsastknprovider`
+    * Package using mvn
+        * `mvn clean package`
+4. The jar file would be present in the `target` directory
+5. Copy this jar and present it as needed by the AWS service being used
+    * For Amazon EMR add this jar in the HADOOP_CLASSPATH and SPARK_DIST_CLASSPATH
+    * For AWS Glue this jar should be included in "Dependent JARs path" property
 
+**Note-1** 
+*The above steps create a simple jar without including any dependencies. If you need to create an uber jar with all the dependencies included or a shaded uber jar with dependencies relocated, follow the instructions from Maven to update the pom.xml file as needed and then package it.*
+
+**Note-2**
+*If you need to create the jar file for subsequent releases, please update the pom.xml file to update any necessary dependencies*
 ## Security
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
