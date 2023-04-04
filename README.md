@@ -15,10 +15,10 @@ In this project we provide a custom class that implements the "SASTokenProvider"
 ## Compilation and Packaging Details
 The details of all the dependencies used for the first version developed can be found in the provided pom.xml file within the project. Some of the important details are listed below. 
 * Java version used to compile, package and test the first version - openjdk version "1.8.0_362"
-* Dependent open-source jars used to compile, package and test the first version:
-    * hadoop-azure-3.3.3.jar 
-    * hadoop-common-3.3.3.jar
-    * hadoop-core-1.2.1.jar
+* Dependent open-source modules used to compile, package and test the first version:
+    * hadoop-azure-3.3.3
+    * hadoop-common-3.3.3
+    * hadoop-client-3.3.3
 
 ## Usage Patterns and Testing Details
 The jar file created created from this custom class implementation can be used to access data in ADLS using SAS tokens from AWS services. 
