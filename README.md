@@ -12,6 +12,8 @@ For example, the SAS based access to ADLS is possible in Amazon EMR version 6.9.
 
 In this project we provide a custom class that implements the "SASTokenProvider" interface that is required to enable the SAS token based access to ADLS using Hadoop and Spark. 
 
+**Note-** *Don't expose the SAS token in the configuration files. It is recommended to save the SAS token in AWS Secrets Manager and set the value to `fs.azure.sas.fixed.token.<azure storage account>.dfs.core.windows.net` at runtime.*
+
 ## Compilation and Packaging Details
 The details of all the dependencies used for the first version developed can be found in the provided pom.xml file within the project. Some of the important details are listed below. 
 * Java version used to compile, package and test the first version - openjdk version "1.8.0_362"
