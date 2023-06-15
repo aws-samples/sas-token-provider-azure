@@ -3,6 +3,8 @@
 ## Summary
 This project provides a custom implementation of SASTokenProvider interface provided by Hadoop. This custom class implementation is required to enable SAS token access to Azure Data Lake Storage (ADLS). Using the jar created from this custom class, we can enable token based remote reads from ADLS directly using AWS services like [Amazon EMR](https://aws.amazon.com/emr/), [AWS Glue](https://aws.amazon.com/glue/) etc.
 
+Using the custom class, blog post [Enable remote reads from Azure ADLS with SAS tokens using Spark in Amazon EMR](https://aws.amazon.com/blogs/big-data/enable-remote-reads-from-azure-adls-with-sas-tokens-using-spark-in-amazon-emr/) demonstrates how to set up authentication and authorization to remote data sources in Azure Data Lake Storage (ADLS) using a shared access signature (SAS) when running Apache Spark jobs via EMR Notebooks attached to an EMR cluster.
+
 ## Description
 Open source Hadoop include modules like [hadoop-aws](https://hadoop.apache.org/docs/stable/hadoop-aws/tools/hadoop-aws/index.html) and [hadoop-azure](https://hadoop.apache.org/docs/stable/hadoop-azure/abfs.html) to provide support for AWS and Azure integration respectively. Azure provides various options to authorize and authenticate requests to storage. And [shared access signature (SAS)](https://learn.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature) is one such option. With SAS you can grant restricted access to ADLS resources over a specified time interval.
 
